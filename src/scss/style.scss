@@ -1,0 +1,30 @@
+// If you want to override variables do it here
+@import "variables";
+
+// Import styles
+@import "node_modules/@coreui/coreui/scss/coreui";
+
+// If you want to add something do it here
+@import "custom";
+
+.breadcrumb{
+    padding:0px;
+    margin-bottom: 0.5rem;
+}
+.breadcrumb a{
+    background: none;border:none;color:#000;border-radius: 0px;
+}
+.breadcrumb a:hover{
+    background: red;
+}
+.disp-cont{
+    min-height: 300px;
+    background: #fff;
+    border:1px solid #f4f4f4;
+  }
+.main .container-fluid{
+      padding:0px;
+  }
+.app-header .navbar-toggler{
+    
+  }
