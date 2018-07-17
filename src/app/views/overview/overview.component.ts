@@ -38,8 +38,8 @@ export class OverviewComponent implements OnInit {
 
   forecast:any=[];
 
-  lat: Number = 51.678418;
-  lng: Number = 7.809007;
+  lat: number = 17.451840;
+  lng: number = 78.370493;
   constructor(private wservice: WeatherService,private router: Router,
     private dashService: DashboardService,
     private authService: AuthenticationService,

@@ -22,6 +22,9 @@ import { DashboardService } from '../../services/dashboard.service';
     ChartsModule,
     BsDropdownModule,
     ButtonsModule.forRoot(),
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyArsQPH5d81K0Ekj-55t6ZbU866gUgeRgk'
+    })
    
   ],
   declarations: [ OverviewComponent ],
