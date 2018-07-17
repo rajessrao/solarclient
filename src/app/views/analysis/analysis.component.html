@@ -132,54 +132,44 @@
 
 <div class="col-md-12">
   <div class="col-md-9 float-left">
-      <div class="card" style="min-height:300px;">
-        <div class="animated fadeIn">
-          <div class="card-columns cols-2">
-            <div class="card">
-              <div class="card-header">
-                Line Chart
-                <div class="card-header-actions">
-                  <a href="http://www.chartjs.org">
-                    <small class="text-muted">docs</small>
-                  </a>
-                </div>
-              </div>
-              <div class="card-body">
-                <div class="chart-wrapper">
-                  <canvas baseChart class="chart"
-                  [datasets]="lineChartData"
-                  [labels]="lineChartLabels"
-                  [options]="lineChartOptions"
-                  [colors]="lineChartColours"
-                  [legend]="lineChartLegend"
-                  [chartType]="lineChartType"
-                  (chartHover)="chartHovered($event)"
-                  (chartClick)="chartClicked($event)"></canvas>
-                </div>
-              </div>
-            </div>
-  </div>
-  </div>
-  </div>
+      <select [(ngModel)]='optionSelected' (ngModelChange)='onOptionsSelected($event)' required>
+          <option [ngValue]="undefined">Daily</option>
+          <option *ngFor='let option of options' [ngValue]="option">{{option}}</option>
+      </select>
+    <div class="">
+      <div [chart]="chart" style="height:250px;"></div>
+    </div>
+    <div class="">
+      <div [chart]="chartt" style="height:250px;"></div>
+    </div>
 </div>
 
   <div class="col-md-3 float-left">
       <div class="card">
-          sdjfhksd
+        <div style="font-size:30px;text-align: center;font-weight:bold;" *ngIf="dashresult">
+                    <h4>Total Savings</h4>
+          {{ dashresult.results.totalSavings }}
+      </div>
       </div>
       <div class="card">
-          
+        <div style="font-size:30px;text-align: center;font-weight:bold;" *ngIf="dashresult">
+                    <h4>Solar Energy Generation</h4>
+          {{ dashresult.results.A_solarEnergyGen }}
+      </div>
       </div>
       <div class="card">
-          
+        <div style="font-size:30px;text-align: center;font-weight:bold;" *ngIf="dashresult">
+                    <h4>Energy Consumption by Load</h4>
+          {{ dashresult.results.D_solarEnergyConByLoad }}
+      </div>
       </div>
       <div class="card">
-          
+        <div style="font-size:30px;text-align: center;font-weight:bold;" *ngIf="dashresult">
+                    <h4>GridEnergy Consumption by Load</h4>
+          {{ dashresult.results.C_gridEnergyConByLoad }}
+      </div>
       </div>
   </div>
-</div>
 
-<div style="width:600px;height:20px">
-  <button (click)="add()">add point</button>
-<div [chart]="chart"></div>
+
 </div>

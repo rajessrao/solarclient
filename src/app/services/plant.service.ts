@@ -33,11 +33,9 @@ export class PlantService {
     headers.append("x-access-token", token);
   
     
-    console.log(headers);
-    console.log(token);
     return this.https.post('http://localhost:4000/api/plants',{"x-access-token": token}, {headers:headers})
     .map((response: Response) => {
-      console.log(response);
+    
       var result = response.json();
       return result;
     })

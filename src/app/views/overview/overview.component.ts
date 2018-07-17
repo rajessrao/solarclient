@@ -33,9 +33,10 @@ export class OverviewComponent implements OnInit {
   weather:Weather[];
   weatherr:any;
   token:any;
-  results:Dashboard[];
+ // results:Dashboard[];
   dashresult:any;
 
+  forecast:any=[];
 
   lat: Number = 51.678418;
   lng: Number = 7.809007;
@@ -54,10 +55,15 @@ export class OverviewComponent implements OnInit {
       this.weatherr = weather;
       console.log(this.weatherr);
     });
+    this.wservice.getforecast().subscribe(forecast => {
+
+      this.forecast = forecast;
+      console.log(this.forecast);
+    });
 
     var token= localStorage.getItem('token');
     this.token = token.replace(/\"/g, "");
-    console.log(token);
+    
     this.dashService.dashboard(this.token).subscribe(result=>{this.dashresult=result});
   
   }

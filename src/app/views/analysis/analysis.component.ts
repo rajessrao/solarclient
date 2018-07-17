@@ -1,12 +1,25 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit ,Input,Output, EventEmitter, HostListener} from '@angular/core';
 
 import { Chart } from "angular-highcharts";
+
+import { DashboardService} from "../../services/dashboard.service";
+
+import { Router,ActivatedRoute } from '@angular/router';
+import { LoginComponent } from '../login/login.component';
+
+import { HttpClient } from '@angular/common/http';
 @Component({
   selector: 'app-analysis',
   templateUrl: './analysis.component.html',
   styleUrls: ['./analysis.component.scss']
 })
 export class AnalysisComponent implements OnInit {
+
+  token:any;
+  dashresult:any;
+  chart:any;
+  chartt:any;
+  model: any = {};
   // lineChart
   public lineChartData: Array<any> = [
     {data: [65, 59, 80, 81, 56, 55, 40], label: 'Series A'},
@@ -97,34 +110,209 @@ export class AnalysisComponent implements OnInit {
   }
 
 
-  constructor() { }
+  constructor(private dashService: DashboardService,private router: Router,private route: ActivatedRoute) { }
 
   ngOnInit() {
-  }
-
-  chart = new Chart({
-     chart:{
-       type:"line"
-     },
-     title:{
-       text: "linechart"
-     },
-     credits:{
-       enabled:false
+    var token= localStorage.getItem('token');
+    this.token = token.replace(/\"/g, "");
+    this.dashService.dashboard(this.token).subscribe(result=>{this.dashresult=result});
+    this.chart = new Chart({
+      chart:{
+        type:"line"
+      },
+      title:{
+        text: "Daily"
+      },
+      credits:{
+        enabled:false
+      },
+      xAxis: {
+        categories: ['6','7', '8', '9','10','11','12','13','14','15','16','17','18']
      },
      series:[{
-       name:"solar power",
-       data:[10,50,30,60,40]
-     },
-     {
-      name:"consumption by load",
-      data:[20,5,45,25,75]
-    }
-   ]
-  });
-
-  add(){
-    this.chart.addPoint(Math.floor(Math.random()*10));
+      name:"solar power",
+      data:[30,50,48,60,40,35,18,63,88,52,63,43,24]
+    },
+    {
+    name:"consumption by load",
+    data:[5,15,18,10,13,18,8,13,18,11,13,23,5]
   }
+  ]
+    });
+    this.chartt = new Chart({
+      chart:{
+        type:"line"
+      },
+      title:{
+        text: "Daily"
+      },
+      credits:{
+        enabled:false
+      },
+      xAxis: {
+        categories: ['6','7', '8', '9','10','11','12','13','14','15','16','17','18']
+     },
+      series:[{
+            name:"consumption by load",
+            data:[5,15,18,10,13,18,8,13,18,11,13,23,5]
+          },
+          {
+          name:"energy send to grid",
+          data:[25,35,30,50,27,17,10,50,70,41,50,20,19]
+        }
+        ]
+    });
+  }
+  options = ["Weekly", "Montly"];
+  optionSelected: any;
 
+onOptionsSelected(event){
+ console.log(event); //option value will be sent as event
+ 
+  if(event=="Weekly"){
+        this.chart = new Chart({
+          chart:{
+            type:"line"
+          },
+          title:{
+            text: "Weekly"
+          },
+          credits:{
+            enabled:false
+          },
+          xAxis: {
+            categories: ['10','11','12','13','14','15','16']
+         },
+          series:[{
+            name:"solar power",
+            data:[50,20,45,35,80,55,41]
+          },
+          {
+          name:"consumption by load",
+          data:[15,10,17,14,25,19,25]
+        }
+        ]
+      });
+      this.chartt = new Chart({
+        chart:{
+          type:"line"
+        },
+        title:{
+          text: "Weekly"
+        },
+        credits:{
+          enabled:false
+        },
+        xAxis: {
+          categories: ['10','11','12','13','14','15','16']
+       },
+        series:[{
+          name:"consumption by load",
+          data:[15,10,17,14,25,19,25]
+        },
+        {
+        name:"energy sent to grid",
+        data:[35,10,28,21,55,36,16]
+      }
+      ]
+      });
+}
+ else if(event=="Montly"){
+          this.chart = new Chart({
+            chart:{
+              type:"line"
+            },
+            title:{
+              text: "Montly"
+            },
+            credits:{
+              enabled:false
+            },
+            xAxis: {
+              categories: ['1', '2', '3','4']
+           },
+            series:[{
+              name:"solar power",
+              data:[50,20,45,35]
+            },
+            {
+            name:"consumption by load",
+            data:[5,10,15,5]
+          }
+          ]
+        });
+        this.chartt = new Chart({
+          chart:{
+            type:"line"
+          },
+          title:{
+            text: "Montly"
+          },
+          credits:{
+            enabled:false
+          },
+          xAxis: {
+            categories: ['1', '2', '3','4']
+         },
+          series:[{
+            name:"consumption by load",
+            data:[5,10,15,5]
+          },
+          {
+          name:"energy sent to grid",
+          data:[45,10,30,30]
+        }
+        ]
+        });
+ }
+ else{
+
+  this.chart = new Chart({
+    chart:{
+      type:"line"
+    },
+    title:{
+      text: "Daily"
+    },
+    credits:{
+      enabled:false
+    },
+    xAxis: {
+      categories: ['6','7', '8', '9','10','11','12','13','14','15','16','17','18']
+   },
+    series:[{
+      name:"solar power",
+      data:[30,50,48,60,40,35,18,63,88,52,63,43,24]
+    },
+    {
+    name:"consumption by load",
+    data:[5,15,18,10,13,18,8,13,18,11,13,23,5]
+  }
+  ]
+});
+this.chartt = new Chart({
+  chart:{
+    type:"line"
+  },
+  title:{
+    text: "Daily"
+  },
+  credits:{
+    enabled:false
+  },
+  xAxis: {
+    categories: ['6','7', '8', '9','10','11','12','13','14','15','16','17','18']
+ },
+  series:[{
+    name:"consumption by load",
+    data:[5,15,18,10,13,18,8,13,18,11,13,23,5]
+  },
+  {
+  name:"energy send to grid",
+  data:[25,35,30,50,27,17,10,50,70,41,50,20,19]
+}
+]
+});
+}
+}
 }

@@ -54,44 +54,11 @@ export const routes: Routes = [
     },
     canActivate: [AuthGuard],
     children: [
-      {
-        path: 'base',
-        loadChildren: './views/base/base.module#BaseModule',
-        canActivate: [AuthGuard]
-      },
-      {
-        path: 'buttons',
-        loadChildren: './views/buttons/buttons.module#ButtonsModule',
-        canActivate: [AuthGuard]
-      },
+      
+     
       {
         path: 'charts',
         loadChildren: './views/chartjs/chartjs.module#ChartJSModule',
-        canActivate: [AuthGuard]
-      },
-      {
-        path: 'dashboard',
-        loadChildren: './views/dashboard/dashboard.module#DashboardModule',
-        canActivate: [AuthGuard]
-      },
-      {
-        path: 'icons',
-        loadChildren: './views/icons/icons.module#IconsModule',
-        canActivate: [AuthGuard]
-      },
-      {
-        path: 'notifications',
-        loadChildren: './views/notifications/notifications.module#NotificationsModule',
-        canActivate: [AuthGuard]
-      },
-      {
-        path: 'theme',
-        loadChildren: './views/theme/theme.module#ThemeModule',
-        canActivate: [AuthGuard]
-      },
-      {
-        path: 'widgets',
-        loadChildren: './views/widgets/widgets.module#WidgetsModule',
         canActivate: [AuthGuard]
       },
       {

@@ -52,7 +52,7 @@
             
             <h1 class="text-center" *ngIf="weatherr">
 
-                            <h2>{{weatherr.main.temp}} </h2>&deg;C
+                            <h2>{{weatherr.main.temp}}&deg;C </h2>
             </h1>
         </div>
     </div>
@@ -67,7 +67,10 @@
                 </div>
                 <div class="clearfix"></div>
                 <div class="mt-2">
+                    <div style="font-size:30px;text-align: center;font-weight:bold;" *ngIf="dashresult">
                     
+                        {{ dashresult.results.todaySavings }}
+                    </div>
                 </div>
             </div>
         </div>
