@@ -1,1 +1,1 @@
-cleared unwanted data and created chart for daily,weekly, montly data
+cleared unwanted data and created chart for daily,weekly, montly data. displaying data in analysis component
