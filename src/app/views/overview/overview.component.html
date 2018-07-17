@@ -53,6 +53,32 @@
             <h1 class="text-center" *ngIf="weatherr">
 
                             <h2>{{weatherr.main.temp}}&deg;C </h2>
+                          
+            </h1>
+            <h1 class="text-center" *ngIf="forecast">
+
+                <h5>{{forecast.list[1].main.temp}}&deg;C </h5>
+                
+            </h1>
+            <h1 class="text-center" *ngIf="forecast">
+
+                <h5>{{forecast.list[11].main.temp}}&deg;C </h5>
+                
+            </h1>
+            <h1 class="text-center" *ngIf="forecast">
+
+                <h5>{{forecast.list[23].main.temp}}&deg;C </h5>
+                
+            </h1>
+            <h1 class="text-center" *ngIf="forecast">
+
+                <h5>{{forecast.list[32].main.temp}}&deg;C </h5>
+                
+            </h1>
+            <h1 class="text-center" *ngIf="forecast">
+
+                <h5>{{forecast.list[39].main.temp}}&deg;C </h5>
+                
             </h1>
         </div>
     </div>
@@ -69,7 +95,7 @@
                 <div class="mt-2">
                     <div style="font-size:30px;text-align: center;font-weight:bold;" *ngIf="dashresult">
                     
-                        {{ dashresult.results.todaySavings }}
+                        ${{ dashresult.results.todaySavings }}
                     </div>
                 </div>
             </div>
@@ -86,7 +112,7 @@
                 <div class="mt-2">
                     <div style="font-size:30px;text-align: center;font-weight:bold;" *ngIf="dashresult">
                     
-                        {{ dashresult.results.CO2Savings }}
+                        {{ dashresult.results.CO2Savings }}Kgs
                     </div>
                 </div>
             </div>
