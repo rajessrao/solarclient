@@ -8,6 +8,11 @@ import { AnalysisComponent } from './analysis.component';
 import { AnalysisRoutingModule } from './analysis-routing.module';
 import { Chart } from "angular-highcharts";
 import { ChartModule, HIGHCHARTS_MODULES } from "angular-highcharts";
+import {CommonModule} from '@angular/common';
+
+import { HttpClientModule, HTTP_INTERCEPTORS,HttpRequest } from '@angular/common/http';
+
+import { HttpClient } from '@angular/common/http';
 import exporting from 'highcharts/modules/exporting.src.js';
 
 export function highchartsModules(){
@@ -15,7 +20,7 @@ export function highchartsModules(){
 }
 @NgModule({
   imports: [
-    FormsModule,ChartModule,ChartsModule,
+    FormsModule,ChartModule,ChartsModule,CommonModule,HttpClientModule,
     AnalysisRoutingModule,
     ChartsModule,
     BsDropdownModule,

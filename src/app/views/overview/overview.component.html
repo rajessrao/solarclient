@@ -40,8 +40,9 @@
     </div>
     <div class="col-md-5 float-left">
         <div class="card disp-cont">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3805.943676710198!2d78.36740301487735!3d17.462409688033706!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb93cc2eecb38b%3A0x7866f36bd4b5e3bb!2sUdaya+Vensar%2C+Kothaguda%2C+Hyderabad%2C+Telangana+500084!5e0!3m2!1sen!2sin!4v1530524939761" width="100%" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>
-        </div>
+            <agm-map [latitude]="lat" [longitude]="lng">
+                <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
+              </agm-map>  </div>
     </div>
     <div class="col-md-3 float-left">
         <div class="card disp-cont">
@@ -52,7 +53,33 @@
             
             <h1 class="text-center" *ngIf="weatherr">
 
-                            <h2>{{weatherr.main.temp}} </h2>&deg;C
+                            <h2>{{weatherr.main.temp}}&deg;C </h2>
+                          
+            </h1>
+            <h1 class="text-center" *ngIf="forecast">
+
+                <h5>{{forecast.list[1].main.temp}}&deg;C </h5>
+                
+            </h1>
+            <h1 class="text-center" *ngIf="forecast">
+
+                <h5>{{forecast.list[11].main.temp}}&deg;C </h5>
+                
+            </h1>
+            <h1 class="text-center" *ngIf="forecast">
+
+                <h5>{{forecast.list[23].main.temp}}&deg;C </h5>
+                
+            </h1>
+            <h1 class="text-center" *ngIf="forecast">
+
+                <h5>{{forecast.list[32].main.temp}}&deg;C </h5>
+                
+            </h1>
+            <h1 class="text-center" *ngIf="forecast">
+
+                <h5>{{forecast.list[39].main.temp}}&deg;C </h5>
+                
             </h1>
         </div>
     </div>
@@ -67,7 +94,10 @@
                 </div>
                 <div class="clearfix"></div>
                 <div class="mt-2">
+                    <div style="font-size:30px;text-align: center;font-weight:bold;" *ngIf="dashresult">
                     
+                        ${{ dashresult.results.todaySavings }}
+                    </div>
                 </div>
             </div>
         </div>
@@ -83,7 +113,7 @@
                 <div class="mt-2">
                     <div style="font-size:30px;text-align: center;font-weight:bold;" *ngIf="dashresult">
                     
-                        {{ dashresult.results.CO2Savings }}
+                        {{ dashresult.results.CO2Savings }}Kgs
                     </div>
                 </div>
             </div>

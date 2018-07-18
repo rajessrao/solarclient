@@ -33,13 +33,8 @@ export class DashboardService {
 
       
     var headers = new Headers();
-      headers.append('Content-Type', 'application/json');
-      
+      headers.append('Content-Type', 'application/json');  
       headers.append("x-access-token", token);
-    
-      console.log(token);
-      
-      console.log(headers);
       return this.https.post("http://localhost:4000/api/dashboards/user", {"x-access-token" : token},{ headers: headers })
           .map((response: Response) => {
             console.log(response);

@@ -20,5 +20,9 @@ export class WeatherService {
     return this._http.get("http://api.openweathermap.org/data/2.5/weather?q=" + city + "&APPID=" + this.apikey + "&units=metric")
       .map(result => result);
   }
+  getforecast(){
+    return this._http.get("http://api.openweathermap.org/data/2.5/forecast?appid=3e4246fe3a6df9df4ee3c717979cd234&q=hyderabad" + "&units=metric")
+    .map (result=>result);
+  }
 }
 
