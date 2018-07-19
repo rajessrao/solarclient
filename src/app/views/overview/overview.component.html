@@ -28,13 +28,14 @@
     <div class="col-md-4 float-left">
         <div class="card disp-cont">
             <h4 style="border-bottom:1px solid #f4f4f4;text-align: center;padding:10px 0px;">Current Power</h4>
-            <span class="badge badge-primary badge-pill" *ngIf="dashresult">
-                    {{ dashresult.results.inverterID }} 
-                    {{ dashresult.results.A_solarEnergyGen }} 
-                    {{ dashresult.results.D_solarEnergyConByLoad }}
-                    {{ dashresult.results.B_solarEnergyToGrid }}
-                    {{ dashresult.results.C_gridEnergyConByLoad }}
-            </span>
+            <div class="" *ngIf="dashresult" style="display:flex;">
+                   <img style="width:80%;margin: 0px auto;" src="assets/img/soalr-current.png">
+                    <!-- <div>{{ dashresult.results.A_solarEnergyGen }} </div>
+                    <div>{{ dashresult.results.D_solarEnergyConByLoad }}</div>
+                    <div>{{ dashresult.results.inverterID }} </div>
+                    <div>{{ dashresult.results.B_solarEnergyToGrid }}</div>
+                    <div>{{ dashresult.results.C_gridEnergyConByLoad }}</div> -->
+            </div>
         </div>
         
     </div>
@@ -48,27 +49,26 @@
         <div class="card disp-cont">
             <h4 class="text-center">Hyderabad</h4>
             <div class="text-center">
-                    <img style="width:60%;" src="assets/img/weather.png">
+                    <img style="width:40%;" src="assets/img/weather.png">
             </div>
+            <div class="text-center" *ngIf="weatherr">
+                <h2>{{weatherr.main.temp}}&deg;C </h2>                
+            </div>
+            <div class="clearfix"></div>
+        <div class="col-md-12">
+          
+
+                <div class="float-left">{{forecast.list[1].main.temp}}&deg;C </div>
+                
+                <div class="float-left">{{forecast.list[11].main.temp}}&deg;C </div>
+                
+                <div class="float-left">{{forecast.list[23].main.temp}}&deg;C </div>
+                
+                <div class="float-left">{{forecast.list[32].main.temp}}&deg;C </div>
+                
+                <div class="float-left">{{forecast.list[35].main.temp}}&deg;C </div>
             
-            <h1 class="text-center" *ngIf="weatherr">
-
-                            <h2>{{weatherr.main.temp}}&deg;C </h2>
-                            <h1 class="text-center" *ngIf="forecast">
-
-                                <h5>{{forecast.list[1].main.temp}}&deg;C </h5>
-                                
-                                <h5>{{forecast.list[11].main.temp}}&deg;C </h5>
-                                
-                                <h5>{{forecast.list[23].main.temp}}&deg;C </h5>
-                                
-                                <h5>{{forecast.list[32].main.temp}}&deg;C </h5>
-                                
-                                <h5>{{forecast.list[35].main.temp}}&deg;C </h5>
-                            </h1>
-                          
-            </h1>
-       
+        </div>
 
         </div>
     </div>
