@@ -33,7 +33,7 @@ login(email: string, password: string){
   const headers = new HttpHeaders().set('Content-Type', 'application/json');
   return this.http.post<any>(appConfig.apiUrl + '/users/authenticate', { email: email, password: password }, { headers : headers })
   .map(user => {
-  
+  console.log(user);
       // login successful if there's a jwt token in the response
       if (user && user.token) {
           // store user details and jwt token in local storage to keep user logged in between page refreshes

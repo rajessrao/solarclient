@@ -31,7 +31,8 @@ export class LoginComponent implements OnInit {
     this.authService.login(this.model.email , this.model.password)
         .subscribe(
             data => {
-
+                
+              localStorage.setItem('firstname', JSON.stringify(data.user.firstName));
               localStorage.setItem('token', JSON.stringify(data.token));
               
                 this.alertService.success('login successful', true);
