@@ -130,16 +130,16 @@
   </div>
 </div> -->
 
-<div class="col-md-12">
+<div class="col-md-12" style="margin-top:10px;">
   <div class="col-md-9 float-left">
       <select [(ngModel)]='optionSelected' (ngModelChange)='onOptionsSelected($event)' required>
           <option [ngValue]="undefined">Daily</option>
           <option *ngFor='let option of options' [ngValue]="option">{{option}}</option>
       </select>
-    <div class="">
+    <div class="" style="margin-top:10px;">
       <div [chart]="chart" style="height:250px;"></div>
     </div>
-    <div class="">
+    <div class="" style="margin-top:10px;">
       <div [chart]="chartt" style="height:250px;"></div>
     </div>
 </div>
