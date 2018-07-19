@@ -54,33 +54,22 @@
             <h1 class="text-center" *ngIf="weatherr">
 
                             <h2>{{weatherr.main.temp}}&deg;C </h2>
+                            <h1 class="text-center" *ngIf="forecast">
+
+                                <h5>{{forecast.list[1].main.temp}}&deg;C </h5>
+                                
+                                <h5>{{forecast.list[11].main.temp}}&deg;C </h5>
+                                
+                                <h5>{{forecast.list[23].main.temp}}&deg;C </h5>
+                                
+                                <h5>{{forecast.list[32].main.temp}}&deg;C </h5>
+                                
+                                <h5>{{forecast.list[35].main.temp}}&deg;C </h5>
+                            </h1>
                           
             </h1>
-            <h1 class="text-center" *ngIf="forecast">
+       
 
-                <h5>{{forecast.list[1].main.temp}}&deg;C </h5>
-                
-            </h1>
-            <h1 class="text-center" *ngIf="forecast">
-
-                <h5>{{forecast.list[11].main.temp}}&deg;C </h5>
-                
-            </h1>
-            <h1 class="text-center" *ngIf="forecast">
-
-                <h5>{{forecast.list[23].main.temp}}&deg;C </h5>
-                
-            </h1>
-            <h1 class="text-center" *ngIf="forecast">
-
-                <h5>{{forecast.list[32].main.temp}}&deg;C </h5>
-                
-            </h1>
-            <h1 class="text-center" *ngIf="forecast">
-
-                <h5>{{forecast.list[39].main.temp}}&deg;C </h5>
-                
-            </h1>
         </div>
     </div>
 </div>
