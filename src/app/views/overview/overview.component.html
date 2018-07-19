@@ -56,18 +56,30 @@
                 <h2>{{weatherr.main.temp}}&deg;C </h2>                
             </div>
             <div class="clearfix"></div>
-        <div class="col-md-12">
+        <div class="col-md-12" *ngIf="weatherr">
           
 
-                <div class="float-left">{{forecast.list[1].main.temp}}&deg;C </div>
+                <div class="float-left weather-fore" >
+                       <div class="" style="width:40px;"> <img style="width:90%;" src="assets/img/weather.png"></div>
+                    {{forecast.list[1].main.temp}}&deg;C 
+                    
+                </div>
                 
-                <div class="float-left">{{forecast.list[11].main.temp}}&deg;C </div>
+                <div class="float-left weather-fore">
+                        <div class="" style="width:40px;"> <img style="width:90%;" src="assets/img/weather.png"></div>
+                    {{forecast.list[11].main.temp}}&deg;C </div>
                 
-                <div class="float-left">{{forecast.list[23].main.temp}}&deg;C </div>
+                <div class="float-left weather-fore">
+                        <div class="" style="width:40px;"> <img style="width:90%;" src="assets/img/weather.png"></div>
+                    {{forecast.list[23].main.temp}}&deg;C </div>
                 
-                <div class="float-left">{{forecast.list[32].main.temp}}&deg;C </div>
+                <div class="float-left weather-fore">
+                        <div class="" style="width:40px;"> <img style="width:90%;" src="assets/img/weather.png"></div>
+                    {{forecast.list[32].main.temp}}&deg;C </div>
                 
-                <div class="float-left">{{forecast.list[35].main.temp}}&deg;C </div>
+                <div class="float-left weather-fore">
+                        <div class="" style="width:40px;"> <img style="width:90%;" src="assets/img/weather.png"></div>
+                    {{forecast.list[35].main.temp}}&deg;C </div>
             
         </div>
 
