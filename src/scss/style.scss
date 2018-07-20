@@ -32,7 +32,7 @@
     border-bottom: none;margin-bottom: 0px
 }
 .menutop{
-    padding:15px  10px;
+    padding:14px  10px !important;
     cursor: pointer;
 }
 .activeclass{
@@ -43,4 +43,8 @@
     padding: 6px;
     border-right: 1px solid #ccc;
     font-size: 12px;
+}
+.badge-primary
+{
+    background: #df1010 !important;
 }

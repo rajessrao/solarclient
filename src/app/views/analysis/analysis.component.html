@@ -145,27 +145,27 @@
 </div>
 
   <div class="col-md-3 float-left">
-      <div class="card">
+      <div class="card" style="height:125px;">
         <div style="font-size:30px;text-align: center;font-weight:bold;" *ngIf="dashresult">
-                    <h4>Total Savings</h4>
+                    <h5 style="font-size: 1.09375rem;background: #e21a1a;color: #fff;padding: 6px 0px;">Total Savings</h5>
           {{ dashresult.results.totalSavings }}
       </div>
       </div>
-      <div class="card">
+      <div class="card" style="height:125px;">
         <div style="font-size:30px;text-align: center;font-weight:bold;" *ngIf="dashresult">
-                    <h4>Solar Energy Generation</h4>
+                    <h5 style="font-size: 1.09375rem;background: #e21a1a;color: #fff;padding:6px 0px;">Solar Energy Generation</h5>
           {{ dashresult.results.A_solarEnergyGen }}
       </div>
       </div>
-      <div class="card">
+      <div class="card" style="height:125px;">
         <div style="font-size:30px;text-align: center;font-weight:bold;" *ngIf="dashresult">
-                    <h4>Energy Consumption by Load</h4>
+                    <h5 style="font-size: 1.09375rem;background: #e21a1a;color: #fff;padding: 6px 0px;">Energy Consumption by Load</h5>
           {{ dashresult.results.D_solarEnergyConByLoad }}
       </div>
       </div>
-      <div class="card">
+      <div class="card" style="height:125px;">
         <div style="font-size:30px;text-align: center;font-weight:bold;" *ngIf="dashresult">
-                    <h4>GridEnergy Consumption by Load</h4>
+                    <h5 style="font-size: 1.09375rem;background: #e21a1a;color: #fff;padding: 6px 0px;">GridEnergy Consumption by Load</h5>
           {{ dashresult.results.C_gridEnergyConByLoad }}
       </div>
       </div>

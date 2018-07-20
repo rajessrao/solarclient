@@ -29,26 +29,31 @@
     <div class="col-md-4 float-left">
         <div class="card disp-cont">
             <h4 style="border-bottom:1px solid #f4f4f4;text-align: center;padding:10px 0px;">Current Power</h4>
-            <div class="" *ngIf="dashresult" style="display:flex;">
+            <div class="" *ngIf="dashresult" style="display:flex;position:relative;">
                    <img style="width:80%;margin: 0px auto;" src="assets/img/soalr-current.png">
-                    <!-- <div>{{ dashresult.results.A_solarEnergyGen }} </div>
-                    <div>{{ dashresult.results.D_solarEnergyConByLoad }}</div>
-                    <div>{{ dashresult.results.inverterID }} </div>
-                    <div>{{ dashresult.results.B_solarEnergyToGrid }}</div>
-                    <div>{{ dashresult.results.C_gridEnergyConByLoad }}</div> -->
+                    <div style=""> 
+                        <div style="position: absolute;left:10px;top:10px;background: #333;color:#fff;padding:4px;border-radius:3px;">{{ dashresult.results.A_solarEnergyGen }} </div>
+                        <div style="position: absolute;left:10px;bottom:10px;background:#333;color:#fff;padding:4px;border-radius:3px;">{{ dashresult.results.D_solarEnergyConByLoad }}</div>
+                        <div style="position: absolute;left:47%;top:63%;background:#333;color:#fff;padding:4px;border-radius:3px;">{{ dashresult.results.inverterID }} </div>
+                        <div style="position: absolute;right:10px;top:10px;background:#333;color:#fff;padding:4px;border-radius:3px;">{{ dashresult.results.B_solarEnergyToGrid }}</div>
+                        <div style="position: absolute;right:10px;bottom:10px;background: #333;color:#fff;padding:4px;border-radius:3px; ">{{ dashresult.results.C_gridEnergyConByLoad }}</div>
+                    </div>
             </div>
         </div>
         
     </div>
     <div class="col-md-5 float-left">
+        
         <div class="card disp-cont">
-            <agm-map [latitude]="lat" [longitude]="lng">
+                <h4 class="text-center" style="background: #322e2e;color:#fff;padding:10px 0px;margin-bottom: 0px;">Plant Location</h4>
+            <agm-map [latitude]="lat" [longitude]="lng" style="height:250px;">
                 <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
               </agm-map>  </div>
     </div>
     <div class="col-md-3 float-left">
         <div class="card disp-cont">
-            <h4 class="text-center">Hyderabad</h4>
+            <!-- <h4 class="text-center">Hyderabad</h4> -->
+            <h4 class="text-center" style="background: #322e2e;color:#fff;padding:10px 0px;margin-bottom: 0px;">Weather Report</h4>
             <div class="text-center">
                     <img style="width:40%;" src="assets/img/weather.png">
             </div>
@@ -92,7 +97,7 @@
             <h4 style="border-bottom:1px solid #f4f4f4;text-align: center;padding:10px 0px;">Today</h4>
             <div class="mt-3">
                 <div class="float-left mt-2" style="text-align: center;">
-                    <img style="width:35%;" src="assets/img/dollar.png">
+                    <img style="width:28%;" src="assets/img/dollar.png">
                 </div>
                 <div class="clearfix"></div>
                 <div class="mt-2">
@@ -109,7 +114,7 @@
             <h4 style="border-bottom:1px solid #f4f4f4;text-align: center;padding:10px 0px;">CO2 Savings Total</h4>
             <div class="mt-3">
                 <div class="float-left mt-2" style="text-align: center;">
-                    <img style="width:25%;" src="assets/img/enviicon.png">
+                    <img style="width:20%;" src="assets/img/enviicon.png">
                 </div>
                 <div class="clearfix"></div>
                 <div class="mt-2">
